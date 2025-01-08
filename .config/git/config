@@ -1,6 +1,6 @@
 [user]
-	name = Mitalos
-	email = mttiolbr@proton.me
+	name = username
+	email = fake-email@example.com
 [core]
 	editor = nvim
 [diff]
