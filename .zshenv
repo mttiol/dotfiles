@@ -1,7 +1,7 @@
 # Adds `~/.local/bin` to $PATH.
 export PATH="$PATH:$HOME/.local/bin"
 
-# Default programs:
+# Default program:
 export EDITOR="nvim"
 
 # XDG default paths:
@@ -17,18 +17,24 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
+# SSH
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# These two are KDE specific
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS_REQUIRE=prefer
+
 ### Wayland Only ###
 
 # Toolkit Backend Variables.
-export GDK_BACKEND="wayland"                    # GTK: Use wayland if available, fall back to x11 if not.
+export GDK_BACKEND="wayland,x11,*"              # GTK: Use wayland if available, fall back to x11 if not.
 export QT_QPA_PLATFORM="wayland;xcb"            # Qt: Use wayland if available, fall back to x11 if not.
-export SDL_VIDEODRIVER="x11"                    # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues.
+export SDL_VIDEODRIVER="wayland,x11,windows"    # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues.
 export CLUTTER_BACKEND="wayland"                # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend.
 
 # QT Variables.
 export QT_AUTO_SCREEN_SCALE_FACTOR="1"          # Enables automatic scaling, based on the monitor’s pixel density
-#export QT_WAYLAND_DISABLE_WINDOWDECORATION="0"	# Disables window decorations on Qt applications
-#export QT_QPA_PLATFORMTHEME="qt5ct"             # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
+export QT_WAYLAND_DISABLE_WINDOWDECORATION="0"	# Disables window decorations on Qt applications
+export QT_QPA_PLATFORMTHEME="qt6ct"             # Tells Qt based applications to pick your theme from qt6ct, use with Kvantum.
 
 # Electron
 export ELECTRON_OZONE_PLATFORM_HINT="wayland"   # Forces electrom apps use wayland by default.

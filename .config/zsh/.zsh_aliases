@@ -50,5 +50,11 @@ alias ytv-best="yt-dlp -f bestvideo+bestaudio"
 alias yt-mp4="yt-dlp --format 'bv*[ext=mp4]+ba/b[ext=mp4]'"
 alias yt-webm="yt-dlp --format 'bv*[ext=webm]+ba/b[ext=webm]'"
 
+# Hugo
+alias hugo-dev="hugo server --gc --disableFastRender --renderToMemory"
+alias hugo-build="hugo --gc --cleanDestinationDir --minify"
+
 # Other aliases.
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+alias ff="fastfetch"
+alias neofetch="fastfetch --config neofetch"

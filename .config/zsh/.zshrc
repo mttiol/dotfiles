@@ -1,9 +1,12 @@
+# A fortune!
+fortune brasil | cowsay
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Enable colors and change prompt.
 autoload -U colors && colors
-PS1="%B%F{green}%n@%m%f %F{blue}%~%f %#%b "
+PS1="%B%F{cyan}%n@%m%f %F{magenta}%~%f %#%b "
 setopt autocd       		# Automatically cd into typed directory.
 setopt interactive_comments
 
