@@ -1,3 +1,3 @@
-require 'vim-plug'
-require 'settings'
-require 'keymaps'
+require("config.lazy")
+require("config.options")
+require("config.keymaps")
