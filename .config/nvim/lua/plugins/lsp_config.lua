@@ -8,7 +8,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "html", "cssls", "clangd" },
+        ensure_installed = { "lua_ls", "html", "cssls", "clangd", "basedpyright" },
         automatic_installation = true,
         handlers = {
           function(server_name)

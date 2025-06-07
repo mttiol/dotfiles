@@ -1,12 +1,20 @@
-# A fortune!
-fortune brasil | cowsay
+# Automatically start Tmux session
+if [[ "$TERM" == "alacritty" && -z "$TMUX" ]]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
 
+#
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Enable Powerlevel10k instant prompt.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Enable colors and change prompt.
 autoload -U colors && colors
-PS1="%B%F{cyan}%n@%m%f %F{magenta}%~%f %#%b "
 setopt autocd       		# Automatically cd into typed directory.
 setopt interactive_comments
 
@@ -80,3 +88,7 @@ esac
 # Load syntax highlighting and autosuggestions; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
