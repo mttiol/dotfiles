@@ -1,0 +1,41 @@
+
+[general]
+import = [ "~/.config/alacritty/Gruvbox-Dark.toml" ]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 10
+builtin_box_drawing = true
+
+  [font.normal]
+  family = "JetBrainsMono Nerd Font"
+
+  [font.bold]
+  family = "JetBrainsMono Nerd Font"
+
+  [font.italic]
+  family = "JetBrainsMono Nerd Font"
+
+  [font.bold_italic]
+  family = "JetBrainsMono Nerd Font"
+
+[window]
+decorations = "Full"
+dynamic_title = true
+dynamic_padding = true
+opacity = 0.90
+blur = true
+
+  [window.dimensions]
+  columns = 130
+  lines = 30
+
+  [window.padding]
+  x = 5
+  y = 5
+
+[terminal.shell]
+program = "tmux"
+args = ["new-session", "-A", "-D", "-s", "TMUX"]

@@ -1,0 +1,47 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$cmd_duration\
+$time\
+$line_break\
+$character
+"""
+
+add_newline = false
+
+[directory]
+style = "bold blue"
+format = "[$path]($style) "
+truncation_length = 3
+truncation_symbol = "…/"
+truncate_to_repo = false
+
+[git_branch]
+style = "bold purple"
+symbol = "󰘬"
+format = "[$symbol $branch]($style) "
+
+[git_status]
+style = "bold red"
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+style = "bold yellow"
+format = "[󰞌 $duration]($style) "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[󰥔 $time]($style)"
+time_format = "%H:%M:%S"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+vicmd_symbol = "[❮](green)"
+

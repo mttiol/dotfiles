@@ -1,0 +1,9 @@
+[user]
+	name = username
+	email = fake-email@example.com
+[core]
+	editor = nvim
+[diff]
+	tool = nvim -d
+[push]
+	default = simple
